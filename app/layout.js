@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 // Load the Inter font with specific weights and styles if needed
 const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] }); // Customize weights if needed

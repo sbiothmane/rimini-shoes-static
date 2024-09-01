@@ -1,10 +1,7 @@
-import fs from 'fs';
 import path from 'path';
+import fs from 'fs';
 import matter from 'gray-matter';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Image from 'next/image';
-import Link from 'next/link';
+import ProductsClientComponent from './ProductsClientComponent';
 
 // Function to fetch all shoe data from Markdown files
 const getAllShoesData = () => {
@@ -25,38 +22,9 @@ const getAllShoesData = () => {
   return shoes;
 };
 
+// This is a server component by default
 export default function ProductsPage() {
   const shoes = getAllShoesData();
 
-  return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-grow flex items-center justify-center px-6 py-8">
-        <div className="w-full">
-          <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Nos Chaussures</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {shoes.map((shoe) => (
-              <Link href={`/shoes/${shoe.id}`} key={shoe.id} passHref>
-                <div className="border rounded-lg overflow-hidden cursor-pointer hover:shadow-lg transition-shadow duration-300">
-                  <Image
-                    src={shoe.images[0]}
-                    alt={shoe.title}
-                    width={500} // Adjust as needed
-                    height={200} // Adjust as needed
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-4">
-                    <h2 className="text-xl font-semibold text-gray-800 mb-2">{shoe.title}</h2>
-                    <p className="text-gray-700 mb-4">{shoe.description}</p>
-                    <p className="text-gray-900 font-bold">Prix: {shoe.price}</p>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  );
+  return <ProductsClientComponent shoes={shoes} />;
 }
