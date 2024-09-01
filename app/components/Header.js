@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image'; // Import Image from next/image
 import { usePathname } from 'next/navigation'; // Use next/navigation for client-side path detection
 
 const Header = () => {
@@ -19,7 +20,13 @@ const Header = () => {
     <header className="bg-white shadow-md py-4 px-6 flex justify-between items-center relative">
       {/* Clickable Logo and Title */}
       <Link href="/" className="flex items-center space-x-4">
-        <img src="/images/logo.jpg" alt="Rimini" className="h-20 w-auto cursor-pointer" />
+        <Image 
+          src="/images/logo.jpg" 
+          alt="Rimini" 
+          width={80} 
+          height={80} 
+          className="h-20 w-auto cursor-pointer" 
+        />
         <h1 className="text-2xl font-bold text-gray-800 cursor-pointer">Rimini</h1>
       </Link>
 
@@ -31,7 +38,7 @@ const Header = () => {
         <Link href="/about" className={`${isActiveLink('/about')} hover:text-gray-800`}>
           À propos
         </Link>
-        <Link href="/products" className={`${isActiveLink('/products')} hover:text-gray-800`}>
+        <Link href="/shoes" className={`${isActiveLink('/shoes')} hover:text-gray-800`}>
           Chaussures
         </Link>
         <Link href="/contact" className={`${isActiveLink('/contact')} hover:text-gray-800`}>
@@ -68,7 +75,7 @@ const Header = () => {
             <Link href="/about" className={`${isActiveLink('/about')} hover:text-gray-800`}>
               À propos
             </Link>
-            <Link href="/products" className={`${isActiveLink('/products')} hover:text-gray-800`}>
+            <Link href="/shoes" className={`${isActiveLink('/shoes')} hover:text-gray-800`}>
               Chaussures
             </Link>
             <Link href="/contact" className={`${isActiveLink('/contact')} hover:text-gray-800`}>

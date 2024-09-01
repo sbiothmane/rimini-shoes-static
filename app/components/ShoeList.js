@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import Image from 'next/image';
 
 const ShoeList = ({ shoes }) => {
   return (
@@ -15,7 +16,13 @@ const ShoeList = ({ shoes }) => {
           >
             {/* Shoe Image */}
             <div className="w-full md:w-1/2 mb-4 md:mb-0 flex justify-center items-center">
-              <img src={shoe.images[0]} alt={shoe.title} className="max-w-full h-auto rounded-lg" />
+              <Image
+                src={shoe.images[0]}
+                alt={shoe.title}
+                width={500} // Adjust the width based on your layout needs
+                height={500} // Adjust the height based on your layout needs
+                className="max-w-full h-auto rounded-lg"
+              />
             </div>
 
             {/* Shoe Details */}
@@ -37,7 +44,7 @@ const ShoeList = ({ shoes }) => {
               <p className="text-gray-700 mb-4 font-semibold">Prix: {shoe.price}</p>
               <div className="flex justify-center">
                 <a
-                  href={`/products/${shoe.id}`}
+                  href={`/shoes/${shoe.id}`} // Updated route to use '/shoes/[id]'
                   className="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition text-center"
                 >
                   Voir les détails

@@ -1,19 +1,20 @@
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ShoeList from './components/ShoeList';
-import { products } from './products';
 import FeaturedShoe from './components/FeaturedShoe';
+import { products } from './products'; // Adjusted import path for products data
 
 export default function Home() {
   // Only show a few shoes on the homepage
   const featuredShoes = products.slice(0, 3);
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header />
+      {/* Featured Shoe Section */}
       <FeaturedShoe />
-      <main className="px-6 py-8">
-        {/* Featured Shoes Section */}
+      <main className="flex-grow px-6 py-8">
+        {/* Shoe List Section */}
         <ShoeList shoes={featuredShoes} />
         {/* Additional sections can go here */}
       </main>

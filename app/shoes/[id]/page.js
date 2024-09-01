@@ -40,10 +40,10 @@ export default function ProductPage({ params }) {
 
 // Fetch all shoe IDs for static generation
 export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join(process.cwd(), '/app/data'));
+  const files = fs.readdirSync(path.join(process.cwd(), 'app/data'));
   const paths = files.map((filename) => ({
     id: filename.replace('.md', '').replace('shoe', ''),
   }));
 
-  return paths.map((path) => ({ params: { id: path.id } }));
+  return paths;
 }

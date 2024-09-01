@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Markdown from 'react-markdown';
+import Image from 'next/image'; // Import Image from next/image
 
 export default function ProductClient({ title, images, colors, price, content }) {
   const [mainImage, setMainImage] = useState(images[0]);
@@ -12,10 +13,12 @@ export default function ProductClient({ title, images, colors, price, content })
       
       {/* Main Image Container with Fixed Size */}
       <div className="mb-6 flex justify-center items-center" style={{ width: '100%', height: '400px' }}>
-        <img
+        <Image
           src={mainImage}
           alt={title}
           className="max-h-full max-w-full object-contain"
+          width={400}
+          height={400}
           style={{ maxHeight: '100%', maxWidth: '100%', margin: 'auto' }}
         />
       </div>
@@ -23,10 +26,12 @@ export default function ProductClient({ title, images, colors, price, content })
       {/* Thumbnails */}
       <div className="flex justify-center space-x-4 mb-8">
         {images.map((image, index) => (
-          <img
+          <Image
             key={index}
             src={image}
             alt={`${title} view ${index + 1}`}
+            width={96} // Adjusted width for the thumbnail
+            height={96} // Adjusted height for the thumbnail
             className="w-24 h-24 object-cover rounded cursor-pointer hover:opacity-80"
             onMouseEnter={() => setMainImage(image)}
           />

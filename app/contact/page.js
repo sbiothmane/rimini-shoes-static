@@ -19,7 +19,7 @@ export default function Contact() {
               <strong>Téléphone:</strong> +212 5 22 22 22 22
             </p>
             <p className="text-gray-600 mb-4">
-              <strong>Adresse:</strong> 123 Rue de l'Artisanat, Casablanca, Maroc
+              <strong>Adresse:</strong> 123 Rue de l&apos;Artisanat, Casablanca, Maroc
             </p>
             <a
               href="https://www.facebook.com/YourPageName"
