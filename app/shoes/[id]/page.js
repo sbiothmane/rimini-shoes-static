@@ -19,9 +19,9 @@ export default function ProductPage({ params }) {
   const { title, images, colors, price } = frontmatter;
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="px-6 py-8">
+      <main className="flex-grow flex items-center justify-center px-6 py-8">
         <div className="max-w-3xl mx-auto">
           {/* Pass data to the client component */}
           <ProductClient
