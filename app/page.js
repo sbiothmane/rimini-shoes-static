@@ -3,6 +3,7 @@ import Footer from './components/Footer';
 import ShoeList from './components/ShoeList';
 import FeaturedShoe from './components/FeaturedShoe';
 import { products } from './products'; // Adjusted import path for products data
+import Scroll from './components/Scroll';
 
 export default function Home() {
   // Only show a few shoes on the homepage
@@ -18,6 +19,7 @@ export default function Home() {
         <ShoeList shoes={featuredShoes} />
         {/* Additional sections can go here */}
       </main>
+      <Scroll shoes={products} />
       <Footer />
     </div>
   );
