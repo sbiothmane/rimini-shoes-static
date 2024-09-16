@@ -19,7 +19,9 @@ export default function Home() {
         <ShoeList shoes={featuredShoes} />
         {/* Additional sections can go here */}
       </main>
-      <Scroll shoes={products} />
+      <div className="hidden sm:block">
+        <Scroll shoes={products} />
+      </div>
       <Footer />
     </div>
   );

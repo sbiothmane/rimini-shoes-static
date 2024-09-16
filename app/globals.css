@@ -12,7 +12,7 @@
 }
 
 .animate-scroll {
-  animation: scroll 30s linear infinite;
+  animation: scroll 8s linear infinite;
 }
 
 .paused {

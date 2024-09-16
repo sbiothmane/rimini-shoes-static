@@ -45,7 +45,7 @@ function Scroll({ shoes }) {
                 className={`flex animate-scroll ${isPaused ? 'paused' : ''}`}
                 style={{ width: 'max-content' }}
             >
-                {[...shoes, ...extraShoes].map((shoe, index) => (
+                {[...shoes, ...shoes].map((shoe, index) => (
                     <ScroolingBox key={index} shoe={shoe} />
                 ))}
             </div>
